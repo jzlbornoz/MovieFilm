@@ -1,0 +1,19 @@
+.Header{
+    width: 100%;
+    height: 10vh;
+    background-color: var(--color1);
+    margin: 0px;
+    padding: 0px;
+}
+
+.Header-wrapped{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+
+.Header a{
+    text-decoration: none;
+    color: var(--color3);
+}

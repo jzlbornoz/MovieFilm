@@ -1,11 +1,13 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
+import { SideBar } from '../components/SideBar';
+import { Cartelera } from '../components/Cartelera';
+import '../style/containers/Home.css'
 
 const Home = () => {
-    const {isAuthenticated , user} = useAuth0();
     return (
-        <div>
-            {`Hola ${user.name}`}
+        <div className="Home">
+            <SideBar />
+            <Cartelera />
         </div>
     )
 }

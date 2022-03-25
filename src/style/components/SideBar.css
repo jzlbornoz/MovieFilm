@@ -1,0 +1,9 @@
+.SideBar{
+    width: 25%;
+    height: 88vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}

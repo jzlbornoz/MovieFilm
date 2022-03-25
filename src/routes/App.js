@@ -5,9 +5,13 @@ import { Landing } from '../containers/Landing.jsx';
 import { Home } from '../containers/Home.jsx';
 import '../App.css';
 import { Profile } from '../containers/Profile.jsx';
+import { AppContext } from '../context/AppContext';
+import { useData } from '../hooks/useData.jsx';
 
 function App() {
+  const value = useData(); 
   return (
+    <AppContext.Provider value={value}>
     <BrowserRouter >
       <Layout >
         <Routes>
@@ -17,6 +21,7 @@ function App() {
         </Routes>
       </Layout>
     </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 

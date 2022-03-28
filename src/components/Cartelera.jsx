@@ -12,18 +12,18 @@ const Cartelera = () => {
   } else {
     return (
       <div className="Cartelera">
+        {`Hola ${user.name}`}
         <div>
           {movies.map(movie => {
-            //const ImgUrl ="https://image.tmdb.org/t/p/w300" + movie.poster_path;
+            const ImgUrl ="https://image.tmdb.org/t/p/w300" + movie.poster_path;
             return (
               <div>
-                 {/*<img src={ImgUrl} alt={movie.title} /> */}
+                 {<img src={ImgUrl} alt={movie.title} /> }
                  <p>{movie.title}</p>
               </div>
             )
           })}
         </div>
-        {`Hola ${user.name}`}
       </div>
     )
   }

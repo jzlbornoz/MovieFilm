@@ -7,10 +7,11 @@ body{
 }
 
 :root{
-  --color1: #1A1A1B;
-  --color2: #333F44;
-  --color3: #37AA9C;
-  --color4: #94F3E4;
+  --color1: #1b262c;
+  --color2: #0f4c75;
+  --color3: #3282b8;
+  --color4: #bbe1fa;
   --color5: #ffffff;
+  --color6: #082e47;
 };
 

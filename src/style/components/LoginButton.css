@@ -12,3 +12,9 @@
     color: var(--color1);
     border-radius: 5px;
 }
+
+
+.LoginButton button:hover{
+    color: var(--color4);
+    background-color: var(--color1);
+}

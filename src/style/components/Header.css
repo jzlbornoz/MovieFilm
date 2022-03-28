@@ -4,6 +4,9 @@
     background-color: var(--color1);
     margin: 0px;
     padding: 0px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 
 .Header-wrapped{

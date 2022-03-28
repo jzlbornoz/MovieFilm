@@ -1,3 +1,18 @@
 .Home{
     display: flex;
+    background-image: linear-gradient(
+  300deg,
+  hsl(204deg 77% 26%) 0%,
+  hsl(204deg 78% 25%) 10%,
+  hsl(204deg 78% 24%) 20%,
+  hsl(204deg 79% 23%) 30%,
+  hsl(204deg 79% 22%) 40%,
+  hsl(204deg 79% 20%) 50%,
+  hsl(204deg 79% 19%) 60%,
+  hsl(204deg 80% 18%) 70%,
+  hsl(204deg 80% 17%) 80%,
+  hsl(204deg 80% 16%) 90%,
+  hsl(204deg 80% 15%) 100%
+);
+    
 }

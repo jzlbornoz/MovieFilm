@@ -1,5 +1,5 @@
 .SideBar{
-    width: 25%;
+    width: 20%;
     height: 88vh;
     margin: 0;
     padding: 0;
@@ -9,4 +9,9 @@
     position: sticky;
     top: 12vh;
     color: var(--color5);
+    padding: 0px 5px 5px 15px;
+}
+
+.SideBar-wrapped {
+    display: flex;
 }

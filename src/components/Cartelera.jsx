@@ -1,26 +1,30 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import '../style/components/Cartelera.css';
 import { AppContext } from '../context/AppContext';
+import { Card } from './Card';
+import '../style/components/Cartelera.css';
 
 const Cartelera = () => {
   const { user } = useAuth0();
-  const { movies, loading } = useContext(AppContext);
+  const { movies, loading, selectMovie } = useContext(AppContext);
 
+  const handleSelect = item => () => {
+    selectMovie(item)
+  };
+  
   if (!!loading) {
     <p>loading</p>
   } else {
     return (
       <div className="Cartelera">
-        {`Hola ${user.name}`}
-        <div>
+        <h2>{`Hello ${user.name}`}</h2>
+        <div className='Cartelera-wrapped'>
           {movies.map(movie => {
-            const ImgUrl ="https://image.tmdb.org/t/p/w300" + movie.poster_path;
             return (
-              <div>
-                 {<img src={ImgUrl} alt={movie.title} /> }
-                 <p>{movie.title}</p>
-              </div>
+              <Link to='/review' key={movie.id + 12} onClick={handleSelect(movie)} >
+                <Card movie={movie}  />
+              </Link>
             )
           })}
         </div>

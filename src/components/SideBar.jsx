@@ -9,10 +9,12 @@ const SideBar = () => {
     } else {
         return (
             <div className="SideBar">
-                <h3>Categorias</h3>
-                {genres.map(genre => (
-                    <p>{genre.name}</p>
-                ))}
+                <div className="Sidebar-wrapped">
+                    <h3>Categorias</h3>
+                    {genres.map(genre => (
+                        <li key={genre.name + 1234}>{genre.name}</li>
+                    ))}
+                </div>
             </div>
         )
     }

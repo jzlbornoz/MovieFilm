@@ -7,20 +7,23 @@ import '../App.css';
 import { Profile } from '../containers/Profile.jsx';
 import { AppContext } from '../context/AppContext';
 import { useData } from '../hooks/useData.jsx';
+import { Review } from '../containers/Review.jsx';
 
 function App() {
-  const value = useData(); 
+  const value = useData();
   return (
     <AppContext.Provider value={value}>
-    <BrowserRouter >
-      <Layout >
-        <Routes>
-          <Route exact path="/" element={<Landing />} />
-          <Route exact path='/home' element={<Home />} />
-          <Route exact path='/profile' element={<Profile />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+      <BrowserRouter >
+        <Layout >
+          <Routes>
+            <Route exact path="/" element={<Landing />} />
+            <Route exact path='/home' element={<Home />} />
+            <Route exact path='/profile' element={<Profile />} />
+            <Route exact path='/review' element={<Review />} />
+            <Route path="*" element={<div>No encontrado</div>} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </AppContext.Provider>
   );
 }

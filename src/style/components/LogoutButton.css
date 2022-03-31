@@ -1,0 +1,19 @@
+.LogoutButton{
+    display: flex;
+    justify-content: start;
+}
+
+.LogoutButton button{
+    padding: 5px 12px 5px 12px;
+    background-color: var(--color4);
+    border: none;
+    outline: none;
+    color: var(--color1);
+    border-radius: 5px;
+}
+
+
+.LogoutButton button:hover{
+    color: var(--color4);
+    background-color: red;
+}

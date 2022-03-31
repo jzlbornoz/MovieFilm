@@ -6,24 +6,33 @@ import { LogoutButton } from '../components/LogoutButton';
 
 
 const Profile = () => {
-    const {user , isAuthenticated} = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
-    if (!!isAuthenticated) {
-      return (
-        <div className='Profile'>
-            <h2>PROFILE</h2>
-            <img src={user.picture} alt={user.name} />
-            <h3>{user.name}</h3>
-            <LogoutButton />
-            <Link to='/'>
-            <p>Atras</p>
-            </Link>
+  if (!!isAuthenticated) {
+    return (
+      <section className='Profile'>
+        <div className="Profile-wrapped">
+          <h2>PROFILE</h2>
+          <img src={user.picture} alt={user.name} />
+          <p><b>UserName: </b>{user.name}</p>
+          <p><b>Email: </b>{user.email}</p>
+          <LogoutButton />
+          <Link to='/'>
+            <p><i className="fa-solid fa-arrow-right-from-bracket fa-2xl" /></p>
+          </Link>
         </div>
-      )
-    }else{
-      <p>Inicia secion</p>
-    }
-  
+      </section>
+    )
+  } else {
+    return (
+      <section className='Profile'>
+        <div className="Profile-wrapped">
+          <p>Inicia sesion</p>
+        </div>
+      </section>
+    )
+  }
+
 }
 
-export  {Profile};
+export { Profile };

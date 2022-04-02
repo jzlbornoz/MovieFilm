@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import initialState from "../initialState.js";
 import { Get } from "./Get";
 
@@ -8,6 +8,7 @@ const useData = () => {
     const [genres , setGenres] = useState([]);
     const [loading, setLoading] = useState(true);
     const [state , setState] = useState(initialState);
+    const [search , setSearch] = useState('');
     const callMovies = "/discover/movie";
     const callGenres = '/genre/movie/list';
 
@@ -38,6 +39,14 @@ const useData = () => {
         console.log(state);
     }
 
+    const inputRef = useRef(null);
+    const handleSearch = () => {
+        setSearch(inputRef.current.value)
+    };
+    const filteredMovies = movies.filter(item => (
+        item.title.toLowerCase().includes(search.toLowerCase())
+    )); 
+
     return (
         {
             movies,
@@ -45,6 +54,10 @@ const useData = () => {
             genres,
             selectMovie,
             state,
+            search,
+            inputRef,
+            filteredMovies,
+            handleSearch,
         }
     )
 };

@@ -1,0 +1,7 @@
+.EmptyResults{
+    color: var(--color5);
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    margin-left: 50%;
+}

@@ -5,12 +5,12 @@ import '../style/containers/Landing.css';
 import { Welcome } from '../components/Welcome';
 
 const Landing = () => {
-  const {isAuthenticated} = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <div className="Landing">
-        {!isAuthenticated ? <Welcome /> : <Home />}
+      {!isAuthenticated ? <Welcome /> : <Home />}
     </div>
   )
 }
 
-export  {Landing};
+export { Landing };

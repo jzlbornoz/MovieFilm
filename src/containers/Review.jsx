@@ -20,7 +20,7 @@ const Review = () => {
                             <p><b>Original Language: </b> {movie.original_language}</p>
                             <p><b>Popularity: </b> {movie.popularity}</p>
                             <p><b>Vote Average:</b> {movie.vote_average}</p>
-                            <Link to='/home'><i className="fa-solid fa-arrow-right-from-bracket fa-2xl" /></Link>
+                            <Link to='/'><i className="fa-solid fa-arrow-right-from-bracket fa-2xl" /></Link>
                         </div>
                     </section>
                 )

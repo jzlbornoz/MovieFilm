@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/components/Header.css';
 import { useAuth0 } from '@auth0/auth0-react';
+import { AppContext } from '../context/AppContext';
 import logo from '../assets/LOGO.png';
 
 const Header = () => {
     const { isAuthenticated } = useAuth0();
+    const { search, inputRef, handleSearch } = useContext(AppContext);
     return (
         <div className="Header">
             <div className="Header-wrapped">
@@ -21,7 +23,7 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className="Header-input">
-                        {!!isAuthenticated  && <input type="text" placeholder='Search' />}
+                        {!!isAuthenticated && <input type="text" placeholder='Search' ref={inputRef} value={search} onChange={handleSearch} />}
                     </div>
                 </div>
             </div>

@@ -1,5 +1,8 @@
 .Footer {
     background-color: var(--color1);
     color: var(--color3);
-    height: 10vh;
+    max-height: 10vh;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }

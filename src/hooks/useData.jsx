@@ -5,17 +5,28 @@ import { Get } from "./Get";
 const useData = () => {
 
     const [movies, setMovies] = useState([]);
+    const [series , setSeries] = useState([]);
     const [genres , setGenres] = useState([]);
     const [loading, setLoading] = useState(true);
     const [state , setState] = useState(initialState);
     const [search , setSearch] = useState('');
     const callMovies = "/discover/movie";
+    const callSeries = '/discover/tv'
     const callGenres = '/genre/movie/list';
 
     //Me trae las peliculas
     useEffect(() => {
         Get(callMovies).then(data => {
             setMovies(data.results);
+            setLoading(false);
+            console.log(data.results);
+        });
+    }, [])
+
+    //Me trae las series
+    useEffect(() => {
+        Get(callSeries).then(data => {
+            setSeries(data.results);
             setLoading(false);
             console.log(data.results);
         });
@@ -43,9 +54,14 @@ const useData = () => {
     const handleSearch = () => {
         setSearch(inputRef.current.value)
     };
+
     const filteredMovies = movies.filter(item => (
         item.title.toLowerCase().includes(search.toLowerCase())
     )); 
+
+    const filteredSeries = series.filter( item => (
+        item.name.toLowerCase().includes(search.toLocaleLowerCase())
+    ))
 
     return (
         {
@@ -58,6 +74,7 @@ const useData = () => {
             inputRef,
             filteredMovies,
             handleSearch,
+            filteredSeries,
         }
     )
 };

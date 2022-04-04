@@ -8,28 +8,40 @@ import '../style/components/Cartelera.css';
 
 const Cartelera = () => {
   const { user } = useAuth0();
-  const { filteredMovies, loading, selectMovie } = useContext(AppContext);
+  const { filteredMovies, loading, selectMovie, filteredSeries } = useContext(AppContext);
 
   const handleSelect = item => () => {
     selectMovie(item)
   };
-  
+
   if (!!loading) {
     <p>loading</p>
   } else {
     return (
-      <div className="Cartelera">
+      <section className="Cartelera">
         <h2>{`Hello ${user.name}`}</h2>
+        <p className='Cartelera-h3'>MOVIES</p>
         <div className='Cartelera-wrapped'>
           {filteredMovies.length > 0 ? filteredMovies.map(movie => {
             return (
-              <Link to='/review' key={movie.id + 12} onClick={handleSelect(movie)} >
-                <Card movie={movie}  />
+              <section>
+                <Link to='/review' key={movie.id + 12} onClick={handleSelect(movie)} className='hola'>
+                <Card movie={movie} />
               </Link>
+              </section>
+              
             )
-          }) : <EmptyResults />}
-        </div>
-      </div>
+          }) : <EmptyResults />} </div>
+          <p className='Cartelera-h3'>SERIES</p>
+          <div className='Cartelera-wrapped'>
+          {filteredSeries.length > 0 ?  filteredSeries.map(serie => (
+            <section>
+              <Link to='/review' key={serie.id} onClick={handleSelect(serie)} className='hola'>
+              <Card movie={serie} />
+            </Link>
+            </section>
+          )) : <EmptyResults />}</div>
+      </section>
     )
   }
 }

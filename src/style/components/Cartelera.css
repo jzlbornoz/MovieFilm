@@ -6,10 +6,17 @@
     color: var(--color5);
 }
 
-.Cartelera-wrapped{
+.Cartelera-wrapped {
     display: grid;
     grid-template-columns: repeat(auto-fill , 230px);
     gap: 40px;
     padding: 40px;
     justify-content: center;
+}
+
+.Cartelera-h3{
+    text-align: center;
+    color: var(--color4);
+    font-weight:900;
+    font-size: 30px;
 }
